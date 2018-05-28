@@ -18,8 +18,10 @@ namespace Schapi.Parser
             var menu = new Dictionary<int, List<string>>();
             var timing = 0;
 
-            foreach (string text in Regex.Matches(data, @"[가-힣]+\([가-힣]+\)|[가-힣]+"))
+            foreach (var match in Regex.Matches(data, @"[가-힣]+\([가-힣]+\)|[가-힣]+"))
             {
+                string text = (match as Match).Value;
+
                 if (Regex.IsMatch(text, "[조중석]식"))
                 {
                     timing = TIMINGS.FindIndex(t => t == text);

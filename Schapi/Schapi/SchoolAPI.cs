@@ -60,9 +60,9 @@ namespace Schapi
         {
             return $"http://{region}/sts_sci_md00_001.do?" +
                    $"schulCode={code}&" +
-                   $"schulCrseScCode={kind}&" +
-                   $"schulKndScScore=0{kind}&" +
-                   $"schYm={year}{month:02d}";
+                   $"schulCrseScCode={(int)kind}&" +
+                   $"schulKndScScore=0{(int)kind}&" +
+                   $"schYm={year}{month:00}";
         }
         
         public Dictionary<int, Menu> GetMonthlyMenus(int year , int month)
