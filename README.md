@@ -6,8 +6,7 @@ C# 기반의 급식, 학사일정 파싱 라이브러리입니다.
 ## 1. 설치  
 
 schapi-cs 는 Visual Studio의 Nuget Console 에 명령어를 입력하여    
-프로젝트에 다음과 같이 설치할 수 있습니다.  
-(Nuget Package Manager UI에 검색도 )
+프로젝트에 다음과 같이 설치할 수 있습니다.
 
 ```
 Install-Package Schapi -Version 1.1.2
