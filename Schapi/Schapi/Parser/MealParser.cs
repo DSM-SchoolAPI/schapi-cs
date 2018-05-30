@@ -43,8 +43,7 @@ namespace Schapi.Parser
             dict.TryGetValue(1, out var lunch);
             dict.TryGetValue(2, out var dinner);
 
-            var menu = new Menu(breakfast, lunch, dinner);
-            return menu;
+            return new Menu(breakfast, lunch, dinner);
         }
 
         public static Dictionary<int, Menu> GetMenusFromDocument(IHtmlDocument document)
