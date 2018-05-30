@@ -11,9 +11,14 @@ namespace Schapi_Cli
     {
         static void Main(string[] args)
         {
-            var api = new SchoolAPI(Kind.HIGH, Region.DAEJEON, "G100000170");
+            var api = new SchoolAPI
+            (
+                SchoolAPI.Kind.HIGH,
+                SchoolAPI.Region.DAEJEON,
+                "G100000170"
+            );
 
-            foreach (var menu in api.GetMonthlyMenus(2018, 5)[30].Breakfast)
+            foreach (var menu in api.GetMonthlyMenus(2018, 5)[23].Lunch)
             {
                 Console.WriteLine(menu);
             }
