@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace Schapi.Parser
 {
-    public static class MealParser
+    internal static class MealParser
     {
         static readonly List<string> TIMINGS = new List<string> { "조식", "중식", "석식" };
 

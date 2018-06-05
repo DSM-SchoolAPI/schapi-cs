@@ -1,4 +1,5 @@
 ﻿using Schapi;
+using Schapi.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace Schapi_Cli
                 "G100000170"
             );
 
+            Console.WriteLine(api.GetMonthlyMenus(2018, 5)[23].BreakfastString);
             foreach (var menu in api.GetMonthlyMenus(2018, 5)[23].Lunch)
             {
                 Console.WriteLine(menu);
