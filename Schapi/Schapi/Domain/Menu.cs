@@ -6,19 +6,19 @@ namespace Schapi.Domain
 {
     public class Menu
     {
-        private List<string> breakfast;
-        private List<string> lunch;
-        private List<string> dinner;
+        public List<string> Breakfast { get; set; }
+        public List<string> Lunch { get; set; }
+        public List<string> Dinner { get; set; }
 
-        public List<string> Breakfast { get => breakfast; set => breakfast = value; }
-        public List<string> Lunch { get => lunch; set => lunch = value; }
-        public List<string> Dinner { get => dinner; set => dinner = value; }
+        public string BreakfastString => string.Join(", ", Breakfast);
+        public string LunchString => string.Join(", ", Lunch);
+        public string DinnerString => string.Join(", ", Dinner);
 
-        public Menu(List<string> breakfast, List<string> lunch, List<string> dinner)
+        internal Menu(List<string> breakfast, List<string> lunch, List<string> dinner)
         {
-            this.breakfast = breakfast;
-            this.lunch = lunch;
-            this.dinner = dinner;
+            Breakfast = breakfast;
+            Lunch = lunch;
+            Dinner = dinner;
         }
     }
 }

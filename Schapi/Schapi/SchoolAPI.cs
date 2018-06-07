@@ -6,7 +6,7 @@ namespace Schapi
 {
     public class SchoolAPI
     {
-        public class Region
+        public static class Region
         {
             public const string
                 SEOUL = "stu.sen.go.kr",

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Schapi.Parser
 {
-    public static class ResponseParser
+    internal static class ResponseParser
     {
         public static IHtmlDocument GetDocumentFromURL(string url)
         {
