@@ -17,10 +17,12 @@ namespace Schapi.Parser
         {
             var menu = new Dictionary<int, List<string>>();
             var timing = 0;
+            //var matches = Regex.Matches(data, @"[가-힣]+\([가-힣]+\)|[가-힣]+").Cast<Match>();
+            var matches = Regex.Matches(data, @"\[?([가-힣]+(?:\([가-힣]*\))*)(?:\*|[0-9]|\.)*\]?").Cast<Match>();
 
-            foreach (var match in Regex.Matches(data, @"[가-힣]+\([가-힣]+\)|[가-힣]+"))
+            foreach (var match in matches)
             {
-                string text = (match as Match).Value;
+                var text = match.Groups[1].Value;
 
                 if (Regex.IsMatch(text, "[조중석]식"))
                 {

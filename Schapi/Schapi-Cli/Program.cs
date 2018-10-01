@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Schapi_Cli
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var api = new SchoolAPI
             (
@@ -19,8 +19,8 @@ namespace Schapi_Cli
                 "G100000170"
             );
 
-            Console.WriteLine(api.GetMonthlyMenus(2018, 5)[23].BreakfastString);
-            foreach (var menu in api.GetMonthlyMenus(2018, 5)[23].Lunch)
+            Console.WriteLine(api.GetMonthlyMenus(2018, 10)[1].BreakfastString);
+            foreach (var menu in api.GetMonthlyMenus(2018, 10)[23].Lunch)
             {
                 Console.WriteLine(menu);
             }
