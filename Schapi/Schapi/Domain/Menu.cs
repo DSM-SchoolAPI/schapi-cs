@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Schapi.Domain
@@ -10,9 +11,9 @@ namespace Schapi.Domain
         public List<string> Lunch { get; set; }
         public List<string> Dinner { get; set; }
 
-        public string BreakfastString => string.Join(", ", Breakfast);
-        public string LunchString => string.Join(", ", Lunch);
-        public string DinnerString => string.Join(", ", Dinner);
+        public string BreakfastString => string.Join(", ", Breakfast.Select(x => x ?? string.Empty));
+        public string LunchString => string.Join(", ", Lunch.Select(x => x ?? string.Empty));
+        public string DinnerString => string.Join(", ", Dinner.Select(x => x ?? string.Empty));
 
         internal Menu(List<string> breakfast, List<string> lunch, List<string> dinner)
         {
