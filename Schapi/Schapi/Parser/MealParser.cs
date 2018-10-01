@@ -18,7 +18,7 @@ namespace Schapi.Parser
             var menu = new Dictionary<int, List<string>>();
             var timing = 0;
             //var matches = Regex.Matches(data, @"[가-힣]+\([가-힣]+\)|[가-힣]+").Cast<Match>();
-            var matches = Regex.Matches(data, @"\[?([가-힣]+(?:\([가-힣]*\))*)(?:\*|[0-9]|\.)*\]?").Cast<Match>();
+            var matches = Regex.Matches(data, @"\[?(\/?[가-힣]+(?:\([가-힣]*\))*)(?:\*|[0-9]|\.)*\]?").Cast<Match>();
 
             foreach (var match in matches)
             {
@@ -32,7 +32,11 @@ namespace Schapi.Parser
 
                 else
                 {
-                    menu[timing].Add(text);
+                    var list = menu[timing];
+                    if (text.StartsWith("/"))
+                        list[list.Count - 1] += text;
+                    else
+                        list.Add(text);
                 }
             }
 
